@@ -1,5 +1,5 @@
 # github repository Actions 페이지에 나타낼 이름..
-name: soullive A CI/CD with Gradle
+name: devocean A CI/CD with Gradle
 
 # event trigger
 # main, develop 브랜치에 push 시실행되는 트리거

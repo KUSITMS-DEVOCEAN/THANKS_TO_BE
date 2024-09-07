@@ -1,5 +1,5 @@
 # github repository Actions 페이지에 나타낼 이름
-name: soullive A CI with Gradle
+name: devocean A CI with Gradle
 
 # event trigger
 # main, develop 브랜치에  pr 생성시 실행되는 트리거
@@ -34,6 +34,13 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+
+      - name: 🐧application.yml 파일을 생성 합니다.
+        run: |
+          cd ./src/main/resources
+          touch ./application.yml
+          echo "${{ secrets.PROPERTIES }}" > ./application.yml
+        shell: bash
 
       - name: 🐧gradle build를 위한 권한을 부여합니다.
         run: chmod +x gradlew
