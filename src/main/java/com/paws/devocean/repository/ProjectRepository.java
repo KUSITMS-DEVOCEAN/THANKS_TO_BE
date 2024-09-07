@@ -1,0 +1,11 @@
+package com.paws.devocean.repository;
+
+import com.paws.devocean.entity.Project;
+import com.paws.devocean.vo.Type;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ProjectRepository extends JpaRepository<Project, Long> {
+    List<Project> findAllByType(Type type);
+}
